@@ -1,4 +1,4 @@
 export interface ApiResponseDTO {
     data: string,
-    status: number
+    status: number,
 }

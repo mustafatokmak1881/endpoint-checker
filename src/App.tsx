@@ -7,9 +7,8 @@ function App() {
   const [name, setName] = useState('Mustafa')
   useEffect(() => {
     setTimeout(async () => {
-      setName('x2333')
-      const response = await apiService.fetchData();
-      console.log({ response });
+      const { title }: any = await apiService.fetchData();
+      setName(title)
     }, 3000);
   }, [])
 
