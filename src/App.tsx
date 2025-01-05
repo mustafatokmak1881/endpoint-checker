@@ -2,12 +2,16 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import apiService from './api/ApiService';
 
+
+
+type listItem = any;
+
 function App() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
     setTimeout(async () => {
-      const list: any = await apiService.fetchData();
+      const list: listItem = await apiService.fetchData();
       setList(list);
     }, 3000);
   }, [])
@@ -25,6 +29,7 @@ function App() {
       </div>
     ))
   )
+
 }
 
 export default App

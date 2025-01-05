@@ -9,8 +9,8 @@ class ApiService {
         try {
             const response: AxiosResponse<ApiResponseDTO> = await this.client.get<ApiResponseDTO>('/posts');
             return response.data;
-        } catch (error) {
-            throw new Error('Cannot getting data');
+        } catch (error: any) {
+            throw new Error(error);
         }
     }
 }
