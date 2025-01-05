@@ -1,18 +1,6 @@
 import { useEffect, useState } from 'react'
-import axios, { AxiosInstance } from 'axios';
 import './App.css'
-import ApiService from './service/request';
-
-
-
-// Axios instance oluştur
-const httpClient: AxiosInstance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com',
-  timeout: 3000,
-  headers: { 'Content-Type': 'application/json' },
-});
-const apiService = new ApiService(httpClient);
-
+import apiService from './api/ApiService';
 
 
 function App() {
@@ -23,7 +11,7 @@ function App() {
       const response = await apiService.fetchData();
       console.log({ response });
     }, 3000);
-  },)
+  }, [])
 
   return (
     <div className="container-fluid">
