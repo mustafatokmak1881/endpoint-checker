@@ -7,7 +7,7 @@ class ApiService {
 
     public async fetchData(): Promise<ApiResponseDTO> {
         try {
-            const response: AxiosResponse<ApiResponseDTO> = await this.client.get<ApiResponseDTO>('/posts/1');
+            const response: AxiosResponse<ApiResponseDTO> = await this.client.get<ApiResponseDTO>('/posts');
             return response.data;
         } catch (error) {
             throw new Error('Cannot getting data');
