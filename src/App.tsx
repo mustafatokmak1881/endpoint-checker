@@ -10,19 +10,19 @@ function App() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    setTimeout(async () => {
+    (async (): Promise<void> => {
       const list: listItem = await apiService.fetchData();
       setList(list);
-    }, 3000);
-  }, [])
+    })()
+  }, []);
 
   return (
     list.map((value: any) => (
       <div className="container-fluid">
         <div className="row">
           <div className="col-12">
-            <div className="alert alert-success w-100" role="alert">
-              {value.title}
+            <div className="alert alert-danger w-100" role="alert">
+              {value.body}
             </div>
           </div>
         </div>
